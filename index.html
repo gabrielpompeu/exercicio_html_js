@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Validação</title>
+</head>
+<body>
+
+    <h1>Formulário de Validação</h1>
+
+    <form id="meuFormulario">
+        <label for="campoA">Campo A:</label>
+        <input type="number" id="campoA" name="campoA" required>
+
+        <br>
+
+        <label for="campoB">Campo B:</label>
+        <input type="number" id="campoB" name="campoB" required>
+
+        <br>
+
+        <button type="button" onclick="validarFormulario()">Submeter</button>
+    </form>
+
+    <div id="mensagem"></div>
+
+    <script>
+        function validarFormulario() {
+            var valorCampoA = document.getElementById('campoA').value;
+            var valorCampoB = document.getElementById('campoB').value;
+
+            var numeroCampoA = parseFloat(valorCampoA);
+            var numeroCampoB = parseFloat(valorCampoB);
+
+            if (numeroCampoB > numeroCampoA) {
+                document.getElementById('mensagem').innerHTML = 'Formulário válido!';
+            } else {
+                document.getElementById('mensagem').innerHTML = 'Formulário inválido. Certifique-se de que B é maior que A.';
+            }
+        }
+    </script>
+
+</body>
+</html>
